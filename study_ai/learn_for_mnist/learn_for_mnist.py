@@ -305,12 +305,8 @@ plt.legend(loc='lower right')
 plt.show()
 
 
-
-
-
-
-
-
+np.save('weigh_and_bias',network.params)
+np.load('weigh_and_bias.npy',None,True,True)
 
 
 
