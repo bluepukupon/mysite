@@ -305,8 +305,23 @@ plt.legend(loc='lower right')
 plt.show()
 
 
-np.save('weigh_and_bias',network.params)
-np.load('weigh_and_bias.npy',None,True,True)
+
+np.save('weight_and_bias_W1',network.params['W1'])
+np.save('weight_and_bias_W2',network.params['W2'])
+np.save('weight_and_bias_b1',network.params['b1'])
+np.save('weight_and_bias_b2',network.params['b2'])
+
+W1 = np.load('weight_and_bias_W1.npy',None,True,True)
+W2 = np.load('weight_and_bias_W2.npy',None,True,True)
+b1 = np.load('weight_and_bias_b1.npy',None,True,True)
+b2 = np.load('weight_and_bias_b2.npy',None,True,True)
+
+
+
+np.savez('weight_and_bias',network.params['W1'],network.params['W2'],network.params['b1'],network.params['b2'])
+param = np.load('weight_and_bias.npz',None,True,True)
+
+
 
 
 
